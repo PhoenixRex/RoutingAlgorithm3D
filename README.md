@@ -23,6 +23,7 @@ Each side can be **open** or **closed**. Two adjacent cubes are connected only i
 - **Algorithm:** Breadth-First Search (BFS)
 - **API Docs:** Swagger / OpenAPI
 - **Frontend (planned):** Angular (`http://localhost:4200`)
+- **Frontend Animations (Planned):** Tree.js
 
 ## Getting Started
 
