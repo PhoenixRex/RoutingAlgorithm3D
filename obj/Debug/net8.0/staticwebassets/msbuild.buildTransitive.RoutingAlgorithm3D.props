@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/RoutingAlgorithm3D.props" />
+</Project>
