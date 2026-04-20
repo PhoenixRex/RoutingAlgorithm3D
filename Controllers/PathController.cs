@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using RoutingAlgorithm3D.Models.Box;
-using RoutingAlgorithm3D.Models;
+using RoutingAlgorithm3D.Services;
 
 namespace RoutingAlgorithm3D.Controllers
 {
@@ -11,32 +11,15 @@ namespace RoutingAlgorithm3D.Controllers
         [HttpGet("test")]
         public IActionResult Test()
         {
-            return Ok("Backend läuft! ✅");
+            return Ok("it is Working");
         }
 
         [HttpPost("calculate")]
-        public IActionResult Calculate([FromBody] PathRequest request)
+        public IActionResult Calculate([FromBody] Boxes request)
         {
-            var test = CreateBlock(false, false);
-            return Ok(new { message = test });
-        }
-
-        private Box CreateBlock(bool box_A, bool box_B)
-        {
-            Box box = new Box();
-            box.top      = false;
-            box.bottom   = false;
-            box.forward  = false;
-            box.backward = false;
-            box.left     = false;
-            box.right    = false;
-            box.point_A  = box_A;
-            box.point_B  = box_B;
-            box.X        = 0;
-            box.Y        = 0;
-            box.Z        = 0;
-            box.rotation = Rotation.Deg0;
-            return box;
+            var service = new PathfindingService(request);
+            var path = service.Calculate();
+            return Ok(new { message = $"{path}" });
         }
     }
 }

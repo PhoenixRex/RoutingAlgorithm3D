@@ -1,6 +1,5 @@
 namespace RoutingAlgorithm3D.Models.Box
 {
-
     public enum Rotation : short
     {
         Deg0   = 0,
@@ -9,21 +8,24 @@ namespace RoutingAlgorithm3D.Models.Box
         Deg270 = 270
     }
 
-    public struct Box
+    public class Box
     {
-        public bool top;
-        public bool bottom;
-        public bool forward;
-        public bool backward;
-        public bool left;
-        public bool right;
-        public bool point_A;
-        public bool point_B;
+        public bool top { get; set; }
+        public bool bottom { get; set; }
+        public bool forward { get; set; }
+        public bool backward { get; set; }
+        public bool left { get; set; }
+        public bool right { get; set; }
+        public bool point_A { get; set; }
+        public bool point_B { get; set; }
+        public short X { get; set; }
+        public short Y { get; set; }
+        public short Z { get; set; }
+        public Rotation rotation { get; set; }
+    }
 
-        public short X;
-        public short Y;
-        public short Z;
-        public Rotation rotation;
-
+    public class Boxes
+    {
+        public Box[] boxes { get; set; }
     }
 }

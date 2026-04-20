@@ -1,0 +1,15 @@
+{
+  "boxes": [
+    { "top": true,  "bottom": false, "forward": true,  "backward": false, "left": false, "right": true,  "point_A": true,  "point_B": false, "x": 0, "y": 0, "z": 0, "rotation": 0 },
+    { "top": false, "bottom": true,  "forward": true,  "backward": true,  "left": true,  "right": true,  "point_A": false, "point_B": false, "x": 1, "y": 0, "z": 0, "rotation": 0 },
+    { "top": true,  "bottom": false, "forward": false, "backward": true,  "left": true,  "right": false, "point_A": false, "point_B": false, "x": 2, "y": 0, "z": 0, "rotation": 0 },
+
+    { "top": true,  "bottom": true,  "forward": false, "backward": false, "left": false, "right": true,  "point_A": false, "point_B": false, "x": 0, "y": 1, "z": 0, "rotation": 0 },
+    { "top": false, "bottom": false, "forward": true,  "backward": true,  "left": true,  "right": true,  "point_A": false, "point_B": false, "x": 1, "y": 1, "z": 0, "rotation": 0 },
+    { "top": true,  "bottom": false, "forward": false, "backward": true,  "left": true,  "right": false, "point_A": false, "point_B": false, "x": 2, "y": 1, "z": 0, "rotation": 0 },
+
+    { "top": false, "bottom": true,  "forward": true,  "backward": false, "left": false, "right": true,  "point_A": false, "point_B": false, "x": 0, "y": 2, "z": 0, "rotation": 0 },
+    { "top": true,  "bottom": false, "forward": false, "backward": true,  "left": true,  "right": true,  "point_A": false, "point_B": false, "x": 1, "y": 2, "z": 0, "rotation": 0 },
+    { "top": false, "bottom": true,  "forward": true,  "backward": false, "left": true,  "right": false, "point_A": false, "point_B": true,  "x": 2, "y": 2, "z": 0, "rotation": 0 }
+  ]
+}

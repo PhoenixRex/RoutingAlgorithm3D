@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/RoutingAlgorithm3D.props" />
-</Project>
