@@ -1,13 +1,5 @@
 namespace RoutingAlgorithm3D.Models.Box
 {
-    public enum Rotation : short
-    {
-        Deg0   = 0,
-        Deg90  = 90,
-        Deg180 = 180,
-        Deg270 = 270
-    }
-
     public class Box
     {
         public bool top { get; set; }
@@ -21,11 +13,15 @@ namespace RoutingAlgorithm3D.Models.Box
         public short X { get; set; }
         public short Y { get; set; }
         public short Z { get; set; }
-        public Rotation rotation { get; set; }
     }
 
     public class Boxes
     {
-        public Box[] boxes { get; set; }
+        public Box[] boxes { get; set; } = Array.Empty<Box>();
+
+        public void AddBox(Box box)
+        {
+            boxes = boxes.Append(box).ToArray();
+        }
     }
 }
