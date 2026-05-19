@@ -19,7 +19,7 @@ namespace RoutingAlgorithm3D.Controllers
         {
             var service = new PathfindingService(request);
             var path = service.Calculate();
-            return Ok(new { message = $"{path}" });
+            return Ok(path);
         }
     }
 }

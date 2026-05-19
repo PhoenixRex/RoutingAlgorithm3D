@@ -25,53 +25,51 @@ namespace RoutingAlgorithm3D.Services
 
             Boxes Neighbors_A = FindNeighbors(a);
             
-            return Neighbors_A.ToString();
+            return System.Text.Json.JsonSerializer.Serialize(Neighbors_A);
         }
 
         private Boxes FindNeighbors(Box box)
         {
             Boxes result = new();
-            //isValid()
-            //X
-            for (int u = 0; u < 2; u++)
-            {
-                int modifier = (u == 0) ? 1 : -1;  // 1. Mal: +1, 2. Mal: -1
-                
-                Box? test = _request.boxes.FirstOrDefault(x => x.X == box.X + u);
 
-                if (test != null)
-                {
-                    result.AddBox(box);
-                }
-            }
+            Box? right = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X + 1 &&
+                b.Y == box.Y &&
+                b.Z == box.Z);
 
-            //Y
-            for (int u = 0; u < 2; u++)
-            {
-                int modifier = (u == 0) ? 1 : -1;  // 1. Mal: +1, 2. Mal: -1
-                
-                Box? test = _request.boxes.FirstOrDefault(x => x.Y == box.X + u);
+            Box? left = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X - 1 &&
+                b.Y == box.Y &&
+                b.Z == box.Z);
 
-                if (test != null)
-                {
-                    result.AddBox(box);
-                }
-            }
+            Box? forward = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X &&
+                b.Y == box.Y + 1 &&
+                b.Z == box.Z);
 
-            //Z
-            for (int u = 0; u < 2; u++)
-            {
-                int modifier = (u == 0) ? 1 : -1;  // 1. Mal: +1, 2. Mal: -1
+            Box? backward = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X &&
+                b.Y == box.Y - 1 &&
+                b.Z == box.Z);
 
-                Box? test = _request.boxes.FirstOrDefault(x => x.Z == box.X + u);
+            Box? top = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X &&
+                b.Y == box.Y &&
+                b.Z == box.Z + 1);
 
-                if (test != null)
-                {
-                    result.AddBox(box);
-                }
-            }
+            Box? bottom = _request.boxes.FirstOrDefault(b =>
+                b.X == box.X &&
+                b.Y == box.Y &&
+                b.Z == box.Z - 1);
 
-            return result;   
+            if (right != null) result.AddBox(right);
+            if (left != null) result.AddBox(left);
+            if (forward != null) result.AddBox(forward);
+            if (backward != null) result.AddBox(backward);
+            if (top != null) result.AddBox(top);
+            if (bottom != null) result.AddBox(bottom);
+
+            return result;
         }
     }
 }
